@@ -14,23 +14,21 @@ namespace EmptyBot1.Bll.Commands
             var value = turnContext.Activity.Text.Substring(1).Trim();
             int.TryParse(value, out var num);
 
-            var msg = string.Empty;
-            
+            string msg;
             if (num == 0)
             {
                 msg = "Wrong number";
             }            
-            else if(Bot.Data.Count < num)
+            else if(Bot.Core.BotHandler.Data.Count < num)
             {
                 msg = "No key";
             }
             else 
             {
-                Bot.Data.RemoveAt(num - 1);
+                Bot.Core.BotHandler.Data.RemoveAt(num - 1);
                 msg = "Deleted " + num;
             }
-
-
+            
             await turnContext.SendActivityAsync(MessageFactory.Text(msg), cancellationToken);
         }
     }

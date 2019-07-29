@@ -1,10 +1,10 @@
-﻿using EmptyBot1.Commands;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using EmptyBot1.Commands;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace EmptyBot1.Bll.Commands
+namespace Bot.Core.Bll.Commands
 {
     public class NoCommand : ICommand
     {

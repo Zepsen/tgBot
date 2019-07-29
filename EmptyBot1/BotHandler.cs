@@ -4,14 +4,15 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Bot.Core.Bll.Commands;
+using EmptyBot1.Bll;
 using EmptyBot1.Bll.Commands;
-using EmptyBot1.Commands;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 
-namespace EmptyBot1
+namespace Bot.Core
 {
-    public class Bot : ActivityHandler
+    public class BotHandler : ActivityHandler
     {
         public static List<string> Data = new List<string>();
 

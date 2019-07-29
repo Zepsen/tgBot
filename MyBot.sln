@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyBot1", "EmptyBot1\EmptyBot1.csproj", "{856BE8DF-68E6-45DA-8667-8B1E8B1A317B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bot.Core", "EmptyBot1\Bot.Core.csproj", "{856BE8DF-68E6-45DA-8667-8B1E8B1A317B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Data", "Bot.Data\Bot.Data.csproj", "{EE25AC38-210F-48FB-AEFB-7F6B97B0ECD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{856BE8DF-68E6-45DA-8667-8B1E8B1A317B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{856BE8DF-68E6-45DA-8667-8B1E8B1A317B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{856BE8DF-68E6-45DA-8667-8B1E8B1A317B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE25AC38-210F-48FB-AEFB-7F6B97B0ECD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE25AC38-210F-48FB-AEFB-7F6B97B0ECD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE25AC38-210F-48FB-AEFB-7F6B97B0ECD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE25AC38-210F-48FB-AEFB-7F6B97B0ECD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
