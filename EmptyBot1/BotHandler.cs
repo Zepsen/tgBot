@@ -28,6 +28,8 @@ namespace Bot.Core
         {
             foreach (var member in membersAdded)
             {
+                if (member.Id == turnContext.Activity.Recipient.Id) continue;
+
                 var user = await _userService.GetAsync(member.Id);
                 if (user == null)
                 {
@@ -37,11 +39,12 @@ namespace Bot.Core
                         ChannelAccountId = member.Id,
                         Role = member.Role
                     });
+
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"Welcome!"), cancellationToken);
                 }
-                
-                if (member.Id != turnContext.Activity.Recipient.Id)
+                else
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hi!"), cancellationToken);
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hi Again!"), cancellationToken);
                 }
             }
 

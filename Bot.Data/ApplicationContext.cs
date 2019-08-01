@@ -8,12 +8,14 @@ namespace Bot.Data
 
         public ApplicationContext()
         {
-            Database.EnsureCreated();
+
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public ApplicationContext(DbContextOptions options)
+            : base(options)
         {
-            optionsBuilder.UseSqlServer("Data Source=botdatabase.database.windows.net;Initial Catalog=botdatabase;User ID=zepsen;Password=Asd_asd1;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
         }
+
     }
 }
