@@ -28,7 +28,7 @@ namespace Bot.Bll.Commands
             await context.Items.AddAsync(item, cancellationToken);
             await context.SaveChangesAsync(cancellationToken);
 
-            user.UsersTasks.Add(new UsersItems { UserId = user.Id, ItemId = item.Id });
+            user.UsersItems.Add(new UsersItems { UserId = user.Id, ItemId = item.Id });
             await context.SaveChangesAsync(cancellationToken);
 
             await turnContext.SendActivityAsync(MessageFactory.Text($"Add command: " + turnContext.Activity.Text), cancellationToken);

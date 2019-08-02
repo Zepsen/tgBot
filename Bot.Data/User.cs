@@ -10,8 +10,8 @@ namespace Bot.Data
         public string Name { get; set; }
         public string Role { get; set; }
 
-
-        public ICollection<UsersItems> UsersTasks { get; set; }
+        
+        public ICollection<UsersItems> UsersItems { get; set; }
 
     }
 }

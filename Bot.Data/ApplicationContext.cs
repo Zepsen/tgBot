@@ -30,7 +30,7 @@ namespace Bot.Data
 
             modelBuilder.Entity<UsersItems>()
                 .HasOne(ut => ut.User)
-                .WithMany(c => c.UsersTasks)
+                .WithMany(c => c.UsersItems)
                 .HasForeignKey(ut => ut.UserId);
 
             base.OnModelCreating(modelBuilder);
