@@ -5,7 +5,7 @@ namespace Bot.Data
     public class ApplicationContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Item> Tasks { get; set; }
+        public DbSet<Item> Items { get; set; }
 
         public ApplicationContext()
         {
@@ -21,12 +21,12 @@ namespace Bot.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UsersItems>()
-                .HasKey(i => new { i.UserId, i.TaskId });
+                .HasKey(i => new { i.UserId, i.ItemId });
 
             modelBuilder.Entity<UsersItems>()
                 .HasOne(ut => ut.Item)
                 .WithMany(b => b.UsersTasks)
-                .HasForeignKey(ut => ut.TaskId);
+                .HasForeignKey(ut => ut.ItemId);
 
             modelBuilder.Entity<UsersItems>()
                 .HasOne(ut => ut.User)

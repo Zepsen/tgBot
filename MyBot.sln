@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.Bot.Core", "EmptyBot1\1.B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3.Bot.Data", "Bot.Data\3.Bot.Data.csproj", "{EE25AC38-210F-48FB-AEFB-7F6B97B0ECD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Bot.BLL", "Bot.BLL\2.Bot.BLL.csproj", "{E17D67AE-9AA2-4C73-8940-F364B070A4F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.Bot.BLL", "Bot.BLL\2.Bot.BLL.csproj", "{E17D67AE-9AA2-4C73-8940-F364B070A4F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

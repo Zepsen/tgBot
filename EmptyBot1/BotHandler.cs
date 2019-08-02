@@ -4,11 +4,10 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Bot.Bll.Commands;
 using Bot.BLL.Interfaces;
-using Bot.Core.Bll.Commands;
 using Bot.Data;
 using EmptyBot1.Bll;
-using EmptyBot1.Bll.Commands;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 
@@ -16,11 +15,13 @@ namespace Bot.Core
 {
     public class BotHandler : ActivityHandler
     {
+        private readonly ApplicationContext _context;
         private readonly IUserService _userService;
         public static List<string> Data = new List<string>();
 
-        public BotHandler(IUserService userService)
+        public BotHandler(ApplicationContext context, IUserService userService)
         {
+            _context = context;
             _userService = userService;
         }
 
@@ -55,7 +56,7 @@ namespace Bot.Core
         {
             var invoker = new Invoker();
             ResolveCommand(turnContext, invoker);
-            await invoker.Run(turnContext, cancellationToken);
+            await invoker.Run(_context, turnContext, cancellationToken);
         }
 
         private void ResolveCommand(ITurnContext<IMessageActivity> turnContext, Invoker invoker)
